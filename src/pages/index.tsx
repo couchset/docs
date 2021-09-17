@@ -1,7 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
@@ -9,14 +8,13 @@ import HomepageFeatures from '../components/HomepageFeatures';
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
 
-  console.log("siteConfig", siteConfig);
   return (
     <header className={clsx('hero hero--primary orangepink-gradient', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div>
-          <img width={"100%"} src="img/framework.png" alt="Couchset framework" />
+          <img width={"100%"} src="img/framework.png" alt="CouchSet framework" />
         </div>
         {/* <div className={styles.buttons}>
           <Link
@@ -34,8 +32,8 @@ export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={siteConfig.title}
+      description="Build enterprise-grade apps in minutes">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

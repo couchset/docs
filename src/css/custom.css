@@ -31,7 +31,12 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .orangepink-gradient {
     background: #fc9c0c;
-    background: -webkit-gradient(linear, left top, right top, from(#fc9c0c), color-stop(50%, #f4763a), color-stop(81%, #f06252), to(#eb4971));
     background: linear-gradient( 90deg, #fc9c0c 0, #f4763a 50%, #f06252 81%, #eb4971);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#fc9c0c", endColorstr="#eb4971", GradientType=1);
+}
+
+.white-gradient {
+    background: #fc9c0c;
+    background: linear-gradient( 90deg, white 0, #f4763a 50%, white 81%, #eb4971);
     filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#fc9c0c", endColorstr="#eb4971", GradientType=1);
 }

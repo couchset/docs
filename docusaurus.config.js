@@ -4,15 +4,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 // With JSDoc @type annotations, IDEs can provide config autocompletion
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 (module.exports = {
-    title: 'SofaSet',
-    tagline: 'Build Enterprise-grade apps like drinking water, take a chill pill Bucko!',
-    url: 'https://your-docusaurus-test-site.com',
+    title: 'Enterprise apps in secs!',
+    tagline: 'Automatic GraphQL API (Resolvers/Queries) for Couchbase',
+    url: 'https://couchset.org',
     baseUrl: '/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
-    organizationName: 'facebook', // Usually your GitHub org/user name.
-    projectName: 'docusaurus', // Usually your repo name.
+    organizationName: 'couchset', // Usually your GitHub org/user name.
+    projectName: 'couchset', // Usually your repo name.
 
     presets: [
         [
@@ -40,10 +40,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
         navbar: {
-            title: 'SofaSet',
+            title: 'CouchSet',
             logo: {
-                alt: 'SofaSet Logo',
-                src: 'img/logo.svg',
+                alt: 'CouchSet Logo',
+                src: 'img/couchset.png',
             },
             items: [{
                     type: 'doc',

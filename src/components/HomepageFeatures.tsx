@@ -16,32 +16,30 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    image: '/img/undraw_docusaurus_mountain.svg',
+    title: 'Automatic GraphQL API',
+    image: '/img/takeoff.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Creating a schema/model with CouchSet is easy as creating one JS variable,
+        Then automatic GraphQL definitions are generated for you, get your backend up and running quickly.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    image: '/img/undraw_docusaurus_tree.svg',
+    title: 'Worlds fastest database',
+    image: '/img/database.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        CouchSet is Couchbase - The worlds fastest NoSQL database with an SQL-like language.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    image: '/img/undraw_docusaurus_react.svg',
+    title: 'React/Vue/Angular',
+    image: '/img/all_frontend.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        CouchSet supports React out of the box, but you're free to use any client that implements Apollo GraphQL.
       </>
     ),
   },

@@ -14,8 +14,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
     organizationName: 'couchset', // Usually your GitHub org/user name.
     projectName: 'couchset', // Usually your repo name.
 
-    plugins: ['@docusaurus/plugin-google-gtag'],
-
     presets: [
         [
             '@docusaurus/preset-classic',

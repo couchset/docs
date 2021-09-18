@@ -2,34 +2,98 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **CouchSet in less than a minute**.
 
-## Getting Started
+## Model
 
-Get started by **creating a new site**.
+Get started by **creating a new file**. let's call it `Person.model.ts`
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+```ts
+// Person.model.ts
+import { Model } from "couchset";
+import { ObjectType, Field, InputType } from "type-graphql";
 
-## Generate a new site
 
-Generate a new Docusaurus site using the **classic template**:
+/**
+ * GraphQL Type & Input
+ */
+@InputType("PersonInput")
+@ObjectType()
+class Person {
 
-```shell
-npx @docusaurus/init@latest init my-website classic
+  @Field(() => String, { nullable: true })
+  id?: string = "";
+
+  @Field(() => String, { nullable: true })
+  name?: string = "";
+
+  @Field(() => Date, { nullable: true })
+  createdAt?: Date = new Date();
+
+}
+
+const PersonModel: Model = new Model("Person");
 ```
 
-## Start your site
+Done!, now you have a model that comes with some cool methods like `PersonModel.create`, `PersonModel.updateById`, `PersonModel.findById`, `PersonModel.pagination`, `PersonModel.delete` ...e.t.c
 
-Run the development server:
+You can connect/call from any API controller methods, regardless of any framework you're using.
 
-```shell
-cd my-website
 
-npx docusaurus start
+## Model Automation
+
+This is how we connect and automate it to generate code with all methods,schema, queries ...**example**:
+
+We're going to import `automateModel` method which will receive the model, and or some options to customise the generated code.
+
+```ts
+import { automaticModel } from 'couchset';
+
+const automaticPerson = automaticModel(Person, {
+  model: PersonModel,
+  createUpdate: {
+    method: createPerson // e.g override the createUpdate method if you want
+  }
+});
+
 ```
 
-Your site starts at `http://localhost:3000`.
+After automating the model, `automaticPerson` will come with Server-side Resolver functions, and client queries, mutations, subscriptions, like below
 
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
+
+```ts
+// Get all automatic generated resolvers and queries/fragments,mutations,subscriptions
+const {
+  resolver: PersonResolver, // Server resolver for building GraphQL 
+  modelKeys: PersonSelectors, // for any custom queries or exporting
+  client, // client queries,mutations,subscriptions
+} = automaticPerson;
+
+```
+
+## The Generated Code
+
+Server side resolver functions
+- personCreate
+- personDelete
+- personGet
+- personPagination
+
+Client side
+- PERSON_CREATE (Mutation)
+- PERSON_DELETE (Mutation)
+- PERSON_GET (Query)
+- PERSON_PAGINATION (Query)
+
+
+## Example client usage
+
+
+```ts
+// somewhere within my fantastic react app
+
+const { data, loading } = useQuery<{ data: Person[] }>(PERSON_GET, { variables: { id: "ceddy" } });
+
+```

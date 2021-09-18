@@ -1,6 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
@@ -16,13 +17,13 @@ function HomepageHeader() {
         <div>
           <img width={"100%"} src="img/framework.png" alt="CouchSet framework" />
         </div>
-        {/* <div className={styles.buttons}>
+        <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            CouchSet Intro - 1min ⏱️
           </Link>
-        </div> */}
+        </div>
       </div>
     </header>
   );

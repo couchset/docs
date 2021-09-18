@@ -54,7 +54,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
                 // },
                 // { to: '/blog', label: 'Blog', position: 'left' },
                 {
-                    href: 'https://github.com/couchset',
+                    href: 'https://github.com/couchset/couchset',
                     label: 'GitHub',
                     position: 'right',
                 },

@@ -20,7 +20,7 @@ const FeatureList: FeatureItem[] = [
     image: '/img/takeoff.svg',
     description: (
       <>
-        Creating a schema/model with CouchSet is easy as creating one JS variable,
+        Creating a schema/model with CouchSet is as easy as creating one JS variable,
         Then automatic GraphQL definitions are generated for you, get your backend up and running quickly.
       </>
     ),

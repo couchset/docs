@@ -45,13 +45,12 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
                 alt: 'CouchSet Logo',
                 src: 'img/couchset.png',
             },
-            items: [
-                // {
-                //     type: 'doc',
-                //     docId: 'intro',
-                //     position: 'left',
-                //     label: 'Tutorial',
-                // },
+            items: [{
+                    type: 'doc',
+                    docId: 'intro',
+                    position: 'left',
+                    label: 'Intro',
+                },
                 // { to: '/blog', label: 'Blog', position: 'left' },
                 {
                     href: 'https://github.com/couchset/couchset',
@@ -66,7 +65,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
                 // {
                 //     title: 'Docs',
                 //     items: [{
-                //         label: 'Tutorial',
+                //         label: 'Intro',
                 //         to: '/docs/intro',
                 //     }, ],
                 // },

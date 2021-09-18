@@ -94,6 +94,6 @@ Client side
 ```ts
 // somewhere within my fantastic react app
 
-const { data, loading } = useQuery<{ data: Person[] }>(PERSON_GET, { variables: { id: "ceddy" } });
+const { data, loading } = useQuery<{ data: Person }>(PERSON_GET, { variables: { id: "ceddy" } });
 
 ```

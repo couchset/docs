@@ -14,6 +14,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
     organizationName: 'couchset', // Usually your GitHub org/user name.
     projectName: 'couchset', // Usually your repo name.
 
+    plugins: ['@docusaurus/plugin-google-gtag'],
+
     presets: [
         [
             '@docusaurus/preset-classic',
@@ -104,6 +106,11 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
         prism: {
             theme: lightCodeTheme,
             darkTheme: darkCodeTheme,
+        },
+        gtag: {
+            trackingID: 'G-BJ0ZPCX7QW',
+            // Optional fields.
+            anonymizeIP: true, // Should IPs be anonymized?
         },
     }),
 });

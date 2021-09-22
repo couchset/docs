@@ -1,0 +1,116 @@
+---
+sidebar_position: 2
+---
+
+# App complete example
+
+Let's create an app with **CouchSet in less than a minute**.
+
+## Installation / Requirements
+
+CouchSet has 2 big installation steps:
+
+1. **Install Couchbase**: See [the Couchbase documentation](https://docs.couchbase.com/server/current/install/install-intro.html) for instructions on installing it with your OS.
+2. **Install Redis**: See [the Redis documentation](https://redis.io/download) for instructions on installing it with your OS.
+
+## Project structure
+
+```sh
+app/
+├── app.js           # app
+├── package.json     # package file
+├── .env             # env file
+```
+
+### - .env file
+
+```sh
+PORT=3334
+DEBUG=roadman*
+APP_NAME=roadman
+
+COUCHBASE_URL='couchbase://localhost'
+COUCHBASE_BUCKET='bucketName'
+COUCHBASE_USERNAME='admin'
+COUCHBASE_PASSWORD='12345'
+
+REDIS_HOST='localhost'
+```
+
+### - app.ts
+
+```ts
+import { roadman } from "roadman";
+import { Model, ObjectType, InputType, Field } from "couchset";
+
+@InputType("PersonInput")
+@ObjectType()
+class Person {
+  @Field(() => String, { nullable: true })
+  id?: string = "";
+
+  @Field(() => String, { nullable: true })
+  firstname?: string = "";
+
+  @Field(() => String, { nullable: true })
+  lastname?: string = "";
+
+  @Field(() => Number, { nullable: true })
+  phone?: number = 0;
+}
+
+const PersonModel = new Model("Person", { graphqlType: Person });
+const automaticPerson = PersonModel.automate({
+  getById: { public: true },
+  createUpdate: { public: true },
+  pagination: { public: true },
+});
+
+const { resolver } = automaticPerson;
+
+const run = async () => {
+  await roadman({ resolvers: [resolver] });
+};
+
+run();
+```
+
+## The Generated Code
+
+Server side resolver functions
+
+- personCreate
+- personDelete
+- personGet
+- personPagination
+
+Client side
+
+- PERSON_CREATE (Mutation)
+- PERSON_DELETE (Mutation)
+- PERSON_GET (Query)
+- PERSON_PAGINATION (Query)
+
+## Client usage
+
+- Open [http://localhost:3334/graphql](http://localhost:3334/graphql)
+
+## `Screenshots`
+
+<div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+  <br/>
+  <p>Create Person mutation</p>
+ <img src="/img/personCreate.png"  alt="1" width="579px"  />
+
+ <br/>
+ <br/>
+ <br/>
+  <p>Person Pagiation Query</p>
+ <img src="/img/personPagination.png" align="right" width="579px" /> 
+
+<br/>
+<br/>
+<br/>
+ <p>Get Person Query</p>
+ <img src="/img/personGet.png" align="right" width="579px" /> 
+</div>

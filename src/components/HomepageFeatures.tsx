@@ -30,7 +30,7 @@ const FeatureList: FeatureItem[] = [
     image: '/img/database.svg',
     description: (
       <>
-        CouchSet is Couchbase - The worlds fastest NoSQL database with an SQL-like language.
+        CouchSet is Couchbase - The worlds fastest NoSQL database with SQL support.
       </>
     ),
   },
